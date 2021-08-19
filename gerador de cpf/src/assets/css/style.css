@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap");
 :root {
   --primary-color: rgb(17, 86, 102);
-  --primary-color-darker: rgb(9, 48, 56);
 }
 
 * {
@@ -19,9 +18,9 @@ body {
 }
 
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  grid-template-areas:
+    "header header"
+    "cpf-gerado btn-copia-cpf";
   max-width: 640px;
   margin: 50px auto;
   background: #fff;
@@ -29,24 +28,35 @@ body {
   border-radius: 10px;
 }
 
-.container h1 {
-  margin-bottom: 80px;
+.grid {
+  display: grid;
+  max-width: 640px;
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
 }
 
 .cpf-gerado {
-  margin-left: -200px;
-  margin-top: 80px;
+  grid-area: cpf-gerado;
+  text-align: end;
+  padding: 10px;
+  font-weight: bold;
 }
 
 .btn-copia-cpf {
+  grid-area: btn-copia-cpf;
   height: 52px;
   width: 52px;
-  margin-left: 20px;
-  margin-top: 80px;
   cursor: pointer;
   border-radius: 26px;
   /* border: none => remove a sombra da borda */
   border: none;
   color: #fff;
   background-color: rgb(81, 233, 61);
+}
+
+.btn-copia-cpf:hover {
+  background-color: rgb(28, 138, 18);
 }
